@@ -1,1 +1,3 @@
-baseurl: /cv
+safe: true
+lsi: false
+source: maruchen.github.io

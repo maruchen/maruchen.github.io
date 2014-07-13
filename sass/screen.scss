@@ -347,15 +347,26 @@ body a {
     list-style-type: none;  
   }
   .date {
-    display: inline-block;
-    width: 7em;
+    display: block;
   }
   .company, .school{
-    display: inline-block;
-    width: 25em;
+    display: block;
   }
   .company, .school, .role{
     margin-left: 1em;
+  }
+}
+
+@media screen and (min-width: 25em) {
+  #resume {
+    .date {
+      display: inline-block;
+      width: 7em;
+    }
+    .company, .school{
+      display: inline-block;
+      width: 25em;
+    }
   }
 }
 

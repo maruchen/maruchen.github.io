@@ -1,189 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width; initial-scale=1.0">
-<meta name="author" content="ChenJing">
-<title>陈晶的简历</title>
-<link href="css/screen.css" media="screen" rel="stylesheet" type="text/css" />
-<!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <link rel="stylesheet" href="css/ie.css">
-  <![endif]-->
-<script src="js/responsive-nav.js"></script>
-</head>
-<body>
+---
+title: sevenChe.com-七拉八扯
+layout: page
+---
 
-<header>
-  <a href="#home" class="logo" data-scroll>陈晶的简历</a>
-  <nav class="nav-collapse">
-    <ul>
-      <li class="active"><a href="#contact" data-scroll>联系我</a></li>
-      <li><a href="#resume" data-scroll>履历</a></li>
-      <li><a href="#interest" data-scroll>兴趣</a></li>
-    </ul>
-  </nav>
-</header>
+<ul class="listing">
+{% for post in paginator.posts %}
+  {% capture y %}{{post.date | date:"%Y"}}{% endcapture %}
+  {% if year != y %}
+    {% assign year = y %}
+    <li class="listing-seperator">{{ y }}</li>
+  {% endif %}
+  <li class="listing-item">
+    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+  </li>
+{% endfor %}
+</ul>
 
-<div class="content">
-  <section id="contact">
-    <h3>陈晶</h3>
-    电话：<a href="tel:18559106277">18559106277</a><br>
-    邮箱：<a href="mailto:chenmaru@qq.com">chenmaru@qq.com</a><br>
-    男 28岁（1986年9月）<br>
-    期望工作地：深圳<br>
-    期望职业：软件工程师<br>
-  </section>
+<div id="post-pagination" class="paginator">
 
-  <section id="resume">
-    <h3>履历</h3>
-    <ul>
-      <li>
-      <span class="date">2012 – 2014</span>
-      <span class="company">百度在线网络技术（北京）有限公司移动云事业部</span>
-      <span class="role">手机浏览器后台开发工程师</span>
-      </li>
-      <br>
-      <li>
-      <span class="date">2009 – 2012</span>
-      <span class="school">中科院计算技术研究所计算机系统结构</span>
-      <span class="role">工学硕士</span>
-      </li>
-      <li>
-      <span class="date">2005 – 2009</span>
-      <span class="school">北京邮电大学光信息科学与技术</span>
-      <span class="role">理学学士</span>
-      </li>
-    </section>
+  {% if paginator.previous_page %}
+    {% if paginator.previous_page == 1 %}
+    <a href="/"><前页</a>
+    {% else %}
+    <a href="/page{{paginator.previous_page}}"><前页</a>
+    {% endif %}
+  {% else %}
+    <span class="previous disabled"><前页</span>
+  {% endif %}
 
-  <section id="project">
-    <h3>项目经历</h3>
-    <ol>
-      <li>
-      <dl>
-        <dt>
-        百度手机浏览器的云端服务
-        </dt>
-        <dd>
-        <h4>广告屏蔽</h4>
-        <p>
-        开发手机浏览器广告屏蔽功能。两种解决方案，分别在服务器端和客户端实现，替用户节约手机流量和系统资源。
-        </p>
-        </dd>
-        <dd>
-        <h4>网页压缩</h4>
-        <p>
-        开发代理服务器的网页压缩功能。增加gzip压缩，并在服务器上用webkit内核解析网页后去除HTML、JS、CSS中的注释、空格等节点。节约用户手机流量。
-        </p>
-        </dd>
-        <dd>
-        <h4>网页差异化传输</h4>
-        <p>
-        开发网页差异化传输功能，对用户浏览的网页做diff，每次只下发patch。平均节约60%流量。
-        </p>
-        </dd>
-        <dd>
-        <h4>网页差异化传输</h4>
-        <p>
-        开发网址安全提示功能，提示用户正在浏览的网页是否安全。每天处理请求1亿次。
-        </p>
-        </dd>
-        <dd>
-        <h4>spdy, quic协议接入</h4>
-        <p>
-        云端加速代理使用spdy, quic协议接入，减少网络请求、节约流量。
-        </p>
-        </dd>
-      </dl>
-      </li>
+      {% if paginator.page == 1 %}
+      <span class="current-page">1</span>
+      {% else %}
+      <a href="/">1</a>
+      {% endif %}
 
-      <li>
-      <dl>
-        <dt> 基于webkit浏览器内核的网页爬虫 </dt>
-        <dd>
-        二次开发及封装webkit浏览器内核库，为轻应用、自动建站等服务提供网页解析技术。
-        </dd>
-        <dd>
-        为爬虫增加广告屏蔽功能。吞吐量从40q/s提升到60q/s，增加50%；处理时间下降30%。
-        </dd>
-        <dd>
-        给商业分析等部门提供网页抓取服务。以HTTP、mcpack等接口形式提供网页解析、渲染、截图和打包等功能。主要用于网页截图、主体提取、js注入、商业广告抽取分析等。
-        </dd>
-      </dl>
-      </li>
+    {% for count in (2..paginator.total_pages) %}
+      {% if count == paginator.page %}
+      <span class="current-page">{{count}}</span>
+      {% else %}
+      <a href="/page{{count}}">{{count}}</a>
+      {% endif %}
+    {% endfor %}
 
-      <li>
-      <dl>
-        <dt>
-        浏览器用户数据分析
-        </dt>
-        <dd>
-        使用Hadoop集群统计日志，生成产品线指标报表。
-        </dd>
-        <dd>
-        收集浏览器内核性能数据，用于跟踪浏览器性能改进。
-        </dd>
-        <dd>
-        建设用户浏览行为数据仓库，描绘用户画像。
-        </dd>
-      </dl>
-      </li>
-
-      <li>
-      <dl>
-        <dt>
-        带领团队开发手游媒体网站<a href="http://www.idouu.com">兜游网 www.idouu.com</a>
-        </dt>
-        <dd>
-        三个月时间内，带领一名设计师、一名php程序员完成该项目。
-        </dd>
-        <dd>
-        负责需求分析、系统设计、团队建设，并且在实践中熟悉了php，以及CSS、响应式设计等前端技术。
-        </dd>
-      </dl>
-      </li>
-    </ol>
-  </section>
-
-  <section id="skill">
-    <h3>技能</h3>
-    <ul>
-      <li>C、C++，Linux服务器开发</li>
-      <li>熟悉网络编程、TCP/IP协议、HTTP协议等</li>
-      <li>了解网页渲染过程，熟悉HTML，JavaScript和CSS</li>
-      <li>使用Hadoop Streaming做数据处理</li>
-      <li>使用vim、git, 熟悉awk、python、php等脚本</li>
-      <li>英语六级；日语通过JLPT-3</li>
-    </ul>
-  </section>
-
-  <section id="interest">
-    <h3>兴趣</h3>
-    <p>
-    本科在北京邮电大学电子工程学院学习光信息科学与技术。这是个交叉学科，所以对半导体、电子、光学、通信、计算机都有学习经历。喜欢动手实验，把课余时间都投入到电子实验室，获得过全国电子设计大赛和Intel嵌入式比赛二等奖。
-    </p>
-    <p>
-    后保研到中科院计算所系统结构专业，把计算技术应用在自动化控制领域。期间在广东顺德的工厂实践一年，研发出国内领先的基于工业实时以太网控制的300吨双点伺服压力机。
-    </p>
-    <p>
-    毕业后从事Linux服务器开发，做手机浏览器的云端加速代理、webkit浏览器内核二次开发和用户行为分析。对机器学习和前端技术颇感兴趣，渴望做出有意思的东西。
-    </p>
-    <p>
-    爱好游泳、篮球等运动；最近正在练习ukulele。喜欢看各种好书。
-    </p>
-    <div class="links">
-      <p>
-      <a href="http://book.douban.com/people/maruchen/" target="_blank">我的豆瓣读书主页</a>
-      </p>
-      <p>
-      <a href="https://github.com/maruchen" target="_blank">github主页</a>
-      </p>
-    </div>
-  </section>
+  {% if paginator.next_page %}
+    <a class="next" href="/page{{paginator.next_page}}">后页></a>
+  {% else %}
+    <span class="next disabled" >后页></span>
+  {% endif %}
+  (共{{ paginator.total_posts }}篇)
 </div>
 
-<script src="js/fastclick.js"></script>
-<script src="js/scroll.js"></script>
-<script src="js/fixed-responsive-nav.js"></script>
-</body>
-</html>

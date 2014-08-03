@@ -1,8 +1,13 @@
-此Git库为我的博客  [七扯](http://blog.sevenCHE.com)，意为七拉八扯。
-使用Jekyll进行搭建，Jekyll是一个Ruby写的程序，可以将Markdown写的文章通过模板生成最终的Html静态文件。
-博客文章的评论功能使用了Disqus。
+#简介
+我的博客 [七七八八的杂货铺](http://maruchen.github.io) 使用Jekyll搭建。
+主要用于分享我的技术心得。无论是翻译、原创，都希望能有自己的东西，拒绝直接转载。
 
-如果你直接拷贝或Fork本Git库作为自己的博客，一定不要忘记删除我写的文章以及修改 `_includes / comments.md` 中的disqus_shortname，以及修改 `_layouts / default.html`中 google analytics的标识  `_gaq.push(['_setAccount', 'UA-12936429-2']);`。
 
-最后感谢您的配合。
+#技术规格
+* h5
+* 响应式布局，支持移动设备
+
+
+# 致谢
+致谢 [七扯](http://blog.sevenCHE.com)，根据该模板修改。
 

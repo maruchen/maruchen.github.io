@@ -93,21 +93,9 @@ h4 {
   line-height: 12px;
   font-weight: bold;
 }
-p, ul, ol, dl {
-  line-height: 24px;
-  margin: 0 0 24px 0;
-}
 p.intro {
   font-size: 24px;
   line-height: 32px;
-}
-ul {
-  list-style-type: square;
-  //padding-left: 12px;
-}
-ol {
-  list-style-type: decimal;
-  padding-left: 12px;
 }
 dt {
   font-weight: 700;
@@ -176,16 +164,6 @@ dl .meta {
 */
 
 
-.listing-item,.listing-seperator{list-style-type:none;}
-.listing-item a{
-  padding:.2em 1em;
-
-}
-
-.listing-item time{color:#999999;}
-.listing-seperator{font-weight:bold;}
-
-
 .paginator {
   font: 14px Arial,Helvetica,sans-serif;
   color: #AAA;
@@ -245,6 +223,21 @@ h1 {
   margin: 2em 0 1em 0;
 }
 
+p, ul, ol, dl {
+  line-height: 1.5em;
+  margin: 0 0 1.5em 0;
+}
+
+ul {
+  list-style-type: square;
+  padding-left: .5em;
+}
+
+ol {
+  list-style-type: decimal;
+  padding-left: .5em;
+}
+
 
 footer{
   display:block;
@@ -273,4 +266,23 @@ footer a:hover {
   -webkit-box-shadow: rgba(0,0,0,1.0) 0px 0px 2px,rgba(255,255,255,0.15) 0px 1px 1px inset;
   text-decoration: none;
 }
+
+// index.html list
+.listing-item,
+.listing-seperator {
+  list-style-type: none;
+}
+
+.listing-seperator {
+  font-weight: bold;
+}
+
+.listing-item a{
+  padding: .2em 1em;
+}
+
+.listing-item time {
+  color:#999999;
+}
+
 

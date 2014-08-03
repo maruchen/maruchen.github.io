@@ -1,6 +1,6 @@
 ---
 title: links
-layout: page
+layout: home
 comments: yes
 ---
 

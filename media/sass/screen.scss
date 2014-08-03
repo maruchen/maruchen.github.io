@@ -71,23 +71,24 @@ body{
 }
 
 h2 {
-  font-size: 26px;
-  line-height: 48px;
-  margin: 0 0 24px 0;
+  font-size: 1.625em; // 26px
+  line-height: 1.5em;
+  margin: 0 0 1em 0;
   font-weight: bold;
 }
 h2 i {
-  font-size: 18px;
+  font-size: .75em;
   color: #ccc;
 }
 h3 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125em; // 18px
+  line-height: 1.5em;
   font-weight: bold;
 }
 section>h3 {
-  margin: 0 0 24px 0;
+  margin: 0 0 1.5em 0;
 }
+
 h4 {
   font-size: 16px;
   line-height: 12px;
@@ -167,7 +168,7 @@ dl .meta {
 .paginator {
   font: 14px Arial,Helvetica,sans-serif;
   color: #AAA;
-  margin: 1em 0;
+  margin: 2em 0 1em;
   line-height: 150%;
   display: block;
 }
@@ -225,7 +226,7 @@ h1 {
 
 p, ul, ol, dl {
   line-height: 1.5em;
-  margin: 0 0 1.5em 0;
+  //margin: 0 0 1.5em 0;
 }
 
 ul {
@@ -285,4 +286,14 @@ footer a:hover {
   color:#999999;
 }
 
+// comments
+.comment {
+  margin: 3em 0 1em;
+  .ds-thread {
+    .ds-meta,
+    .ds-comments-info {
+      display: none;
+    }
+  }
+}
 

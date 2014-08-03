@@ -1,7 +1,8 @@
 ---
 layout: home
-title: 留言
+title: 留言板
 comments: yes
 ---
 
-使用评论留言哦！
+请留言!~
+

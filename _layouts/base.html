@@ -1,56 +1,44 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="author" content="{{ site.author }}" />
-    <meta name="viewport" content="width=device-width"> 
-    <title>{{ page.title }} | {{ site.author }}</title>
-    <link href="/feed/" rel="alternate" title="{{ site.author }}" type="application/atom+xml" />
-    <link rel="shortcut icon" href="/favicon.ico"/>
-	<link rel="icon" href="http://blog.sevenche.com/favicon.ico"/>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="{{ site.author }}">
+<meta name="keywords" content="互联网,技术,blog">
+<title>{{ page.title }} | {{ site.title }}</title>
 
-    <link rel="stylesheet" href="/media/css/highlight.css">
-    <link href='/media/webfonts/ss-social.css' rel='stylesheet'>
-    <link href='/media/webfonts/ss-standard.css' rel='stylesheet'>
+<link rel='stylesheet' href='/media/css/screen.css'>
+<!-- <link rel='stylesheet' href='/media/webfonts/ss-social.css'> -->
+<link rel='stylesheet' href='/media/webfonts/ss-standard.css'>
+<!-- <link rel="stylesheet" href="/media/css/highlight.css"> -->
+<link rel="alternate" href="/feed/" title="{{ site.author }} | {{ site.title }}" type="application/atom+xml">
+</head>
 
-    <script language="JavaScript"><!--
-        if (navigator.userAgent.match(/iPhone|iPod|Android|IEMobile/i)) {
-            document.write("<link href=\"/media/css/screen-mobil.css\" rel=\"stylesheet\">");
-        } else {
-            document.write("<link href=\"/media/css/screen.css\" rel=\"stylesheet\">");
-        }
-        // -->
-    </script>
-
-    <!--script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script-->
-    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js"></script>
-	
-  </head>
-  <body>
-    <div id="container">
-      <div id="main" role="main">
-        <header>
-        <div class="buttons">
-          <a href="/" class="ss-icon" title="Go to homepage">home</a>
-          <a href="/categories" class="ss-icon" title="Category" >list</a>
-          <a href="/tags" class="ss-icon" title="Tag Cloud" >tags</a>
-          <a href="/guestbook" class="ss-icon" title="Guest Book" >talk</a>
-          <a href="/about" class="ss-icon" title="About" >user</a>
-          <a href="/feed" class="ss-icon" title="Subscribe by RSS" >rss</a>
-        </div>
-        <h1>{{ page.title }}</h1>
-        </header>
-        <hr>
-        <article class="content">
-        {{ content }}
-        </article>
-      </div>
-
-    <footer>
-        <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> | Free hosted at <a href="https://github.com/dashjim">Github</a> | Copyright 2014 - {{site.time | date:"%Y"}} by <a href="http://blog.sevenche.com/about/">Jim</a>| <span class="label label-info">{{site.time | date:"%Y-%m-%d %H:%M:%S %Z"}}</span></small></p>
-    </footer>
-
+<body>
+<div class="container">
+  <header>
+    <div class="nav-buttons">
+      <a href="/" class="ss-icon" title="主页">home</a>
+      <a href="/categories" class="ss-icon" title="分类" >list</a>
+      <a href="/tags" class="ss-icon" title="标签" >tags</a>
+      <a href="/guestbook" class="ss-icon" title="留言板" >talk</a>
+      <a href="/about" class="ss-icon" title="作者" >user</a>
+      <a href="/feed" class="ss-icon" title="RSS" >rss</a>
     </div>
+    <h1>{{ page.title }}</h1>
+  </header>
 
-  </body>
+  <div class="content">
+    {{ content }}
+  </div>
+
+  <footer>
+    <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> | Free hosted at <a href="https://github.com/maruchen/maruchen.github.io">Github</a> | Copyright 2014 - {{site.time | date:"%Y"}} by <a href="/about/">{{ site.author }}</a>| <span class="label label-info">{{site.time | date:"%Y-%m-%d %H:%M:%S %Z"}}</span></small></p>
+  </footer>
+
+</div>
+
+<!-- <script type="text/javascript" src="/media/js/jquery-1.9.1.min.js"></script> -->
+</body>
 </html>

@@ -1,6 +1,8 @@
 markdown: rdiscount
 permalink: /:year/:month/:title/
-url: http://blog.sevenche.com
-author: Jim
+url: http://maruchen.github.io
+author: maruchen
 highlight: pygments
 paginate: 24
+title: 七七八八的杂货铺
+

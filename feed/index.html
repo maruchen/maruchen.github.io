@@ -1,24 +1,28 @@
 ---
+
 ---
+
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" >
-  <channel>
-    <title>{{ site.title | xml_escape }}</title>
-    <description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>
-    <link>{{ site.url }}</link>
-    <atom:link href="{{ site.url }}/feed/" rel="self" type="application/rss+xml" />
-    <lastBuildDate>{{ site.time | date_to_xmlschema }}</lastBuildDate>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-    {% for post in site.posts limit:10 %}
-    <item>
-      <title>{{ post.title | xml_escape }}</title>
-      <link>{{ site.url }}{{ post.url }}</link>
-      <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
-      <author>{{ site.author }}</author>
-      <guid>{{ site.url }}{{ post.id }}</guid>
-      <content:encoded><![CDATA[{{ post.content }}]]></content:encoded>
-    </item>
-    {% endfor %}
-  </channel>
-</rss>
+ <title>{{ site.title }}</title>
+ <link href="{{ site.url }}{{ site.baseurl }}atom.xml" rel="self"/>
+ <link href="{{ site.url }}{{ site.baseurl }}"/>
+ <updated>{{ site.time | date_to_xmlschema }}</updated>
+ <id>{{ site.url }}</id>
+ <author>
+   <name>{{ site.author.name }}</name>
+   <email>{{ site.author.email }}</email>
+ </author>
 
+ {% for post in site.posts %}
+ <entry>
+   <title>{{ post.title }}</title>
+   <link href="{{ site.url }}{{ site.baseurl }}{{ post.url }}"/>
+   <updated>{{ post.date | date_to_xmlschema }}</updated>
+   <id>{{ site.url }}{{ post.id }}</id>
+   <content type="html">{{ post.content | xml_escape }}</content>
+ </entry>
+ {% endfor %}
+
+</feed>

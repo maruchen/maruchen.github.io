@@ -23,7 +23,7 @@ layout: home
 
 <script type="text/javascript" src="/media/js/jquery-1.9.1.min.js"></script>
 <script src="/media/js/jquery.tagcloud.js" type="text/javascript" charset="utf-8"></script> 
-<script language="javascript">
+<script type="text/javascript">
 $.fn.tagcloud.defaults = {
     size: {start: 1, end: 1, unit: 'em'},
       color: {start: '#f8e0e6', end: '#ff3333'}

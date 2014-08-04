@@ -2,6 +2,7 @@ markdown: rdiscount
 permalink: /:year/:month/:title/
 url: http://maruchen.github.io
 author: maruchen
+email: chenmaru@163.com
 highlight: pygments
 paginate: 24
 title: 七七八八的杂货铺

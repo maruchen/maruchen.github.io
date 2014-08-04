@@ -218,11 +218,15 @@ h1 {
 }
 .nav-buttons{
   float: right;
-  margin-top: .875em;
+  margin: .875em 0;
 }
 
 .content {
   margin: 2em 0 1em 0;
+  p {
+    word-wrap: break-word;
+    overflow: hidden; 
+  }
 }
 
 p, ul, ol, dl {

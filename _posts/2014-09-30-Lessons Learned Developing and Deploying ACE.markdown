@@ -9,8 +9,9 @@ tags:
 
 翻译自“Lessons Learned Developing and Deploying ACE” from [《An Architectural Overview of the ACE Framework》](http://www.cse.wustl.edu/~schmidt/PDF/login.pdf) by Douglas C. Schmidt
 
-
+<br>
 这一部分总结了过去七年我为ACE框架开发可复用的面向对象组件，以及在航空电子、电信、医疗等领域的商业应用中部署ACE框架学到的经验。
+  
 
 **软件不可复用大多由于非技术原因：**理论上，公司等组织都已经认识到软件复用对于减少开发周期和提高软件质量的重要性。但是在实际中，有许多原因都会导致无法做到系统性的软件复用。其中大部分来自政治、经济、组织架构和心理上的障碍，而不是技术上的。举个例子，开发可复用中间件的平台团队经常会被开发应用的团队抱怨，因为后者失去了对架构中的关键部分做决定的话语权。
 

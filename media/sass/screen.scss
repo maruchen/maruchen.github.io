@@ -76,7 +76,8 @@ pre {
   margin: 0 0 24px;
   background-color: #f3f3f3;
 }
-p code {
+p code, 
+ul code {
   font-family: monospace;
   font-size: 14px;
   border: 1px solid #edebea;
@@ -163,7 +164,7 @@ body{
 h2 {
   font-size: 1.625em; // 26px
   line-height: 1.5em;
-  margin: 0 0 1em 0;
+  margin: 1em 0 .8em 0;
   font-weight: bold;
 }
 h2 i {
@@ -226,8 +227,8 @@ h1 {
   p {
     word-wrap: break-word;
     overflow: hidden; 
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin-top: .8em;
+    margin-bottom: .8em;
   }
 }
 

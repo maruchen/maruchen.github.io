@@ -16,6 +16,7 @@ tags:
 
 *共享内存大小限制# cat /proc/sys/kernel/shmmax，单位：字节。*
 
+![共享内存地址空间](/pic/shared_memory.jpg)
 
 
 ##`int shmget(key_t key, size_t size, int shmflg);`

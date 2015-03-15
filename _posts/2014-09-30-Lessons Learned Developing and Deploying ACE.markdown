@@ -4,7 +4,7 @@ title: Douglas C. Schmidt 在开发和部署ACE中得到的经验
 categories:
 - 翻译
 tags:
-- 翻译,软件工程,ACE
+- [翻译,软件工程,ACE]
 ---
 
 翻译自“Lessons Learned Developing and Deploying ACE” from [《An Architectural Overview of the ACE Framework》](http://www.cse.wustl.edu/~schmidt/PDF/login.pdf) by Douglas C. Schmidt

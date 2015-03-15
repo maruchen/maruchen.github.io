@@ -34,6 +34,16 @@ tags:
 4. **XZ Utils**是LZMA Utils的继承者。支持.xz和.lzma格式。
 
 
+xz和gzip的性能对比：
+---
+用xz和gzip对文本文件做压缩大小和压缩、解压缩时间的性能对比。结果如下图。
+可以看出：  
+1. 大小：对于大文件（大于10kB）xz相对gzip才有压缩率的收益。  
+2. 压缩时间：xz压缩的耗时是gzip的7倍以上。而且对于越大的文件，xz相对gzip增加的耗时更多。  
+3. 解压时间：xz的解压缩时间对gzip的比值比较稳定，大约多花费3-5倍。 
+	![xz vs gzip](/pic/xz vs gzip.png "xz vs gzip性能比较")
+
+
 文件格式详解：
 ---
 ### 1. lzma

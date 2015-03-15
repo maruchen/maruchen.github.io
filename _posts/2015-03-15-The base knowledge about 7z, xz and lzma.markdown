@@ -48,7 +48,7 @@ tags:
 <br> Stream Header包含magic number（FD 37 7A 58 5A 00）、Stream Flags以及CRC校验。其中Stream Flgas是CRC校验的类型。  
 	![xz stream header](/pic/xz stream header.png "xz stream header")
 <br> Block包含Block Header和压缩数据。Block Header包含了压缩算法（filter）的数目和属性、数据长度以及CRC校验。  
-	![xz block](/pic/xz block.png “xz block”)<br>
+	![xz block](/pic/xz block.png "xz block")<br>
 	![xz block header](/pic/xz block header.png "xz block header")
 <br> Index作用和结构如下：  
 	![xz index](/pic/xz index.png "xz index")

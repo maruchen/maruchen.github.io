@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="us">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timestamp Converter</title>
+</head>
+
+<html>
+<body>
+<table>
+    <tbodd>
+        <tr>
+            <th>
+                <label for="left-text">timestamp in seconds</label>
+            </th>
+            <th>
+                <label for="right-text">time string</label>
+            </th>
+            <th>
+
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <input id="left-text" type="text" value="">
+            </th>
+            <th>
+                <input id="right-text" type="text" value="">
+            </th>
+            <th>
+                <button id="convert">GO</button>
+            </th>
+        </tr>
+    </tbodd>
+</table>
+
+<script type="text/javascript" src="/media/js/jquery-1.9.1.min.js"></script>
+<script>
+    function timeToString(unix_timestamp) {
+        var a = new Date(unix_timestamp * 1000);
+        var year = a.getFullYear();
+        var month = a.getMonth() + 1;
+        var date = a.getDate();
+        var hour = a.getHours();
+        var min = a.getMinutes();
+        var sec = a.getSeconds();
+        var time = year + '-' + month + '-' + date + ' ' + hour + ':' + min + ':' + sec;
+        return time;
+    }
+
+    function stringToTime(str) {
+        return (new Date(str)).getTime() / 1000;
+    }
+
+    $(document).ready(function () {
+        var left = $('#left-text');
+        var right = $('#right-text');
+
+        var current = Math.floor(Date.now() / 1000);
+        left.val(current);
+        right.val(timeToString(current));
+
+        var left_focus = true;
+        left.focus(function () {
+            left_focus = true;
+        });
+        right.focus(function () {
+            left_focus = false;
+        });
+
+        $('#convert').click(function () {
+            console.log(left.val());
+            console.log(right.val());
+            if (left_focus && left.val() != "") {
+                var unix_timestamp = left.val();
+                right.val(timeToString(unix_timestamp));
+            } else if (!left_focus && right.val() != "") {
+                var unix_timestamp = stringToTime(right.val());
+                left.val(unix_timestamp);
+            }
+        });
+    });
+</script>
+</body>
+</html>
